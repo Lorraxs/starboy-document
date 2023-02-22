@@ -1,0 +1,8 @@
+{
+  "label": "Type & Interface",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "All types and interfaces was shared all side (client, server, ui)"
+  }
+}
