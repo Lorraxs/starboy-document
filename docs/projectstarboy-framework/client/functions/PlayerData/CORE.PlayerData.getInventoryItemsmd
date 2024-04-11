@@ -1,0 +1,17 @@
+# CORE.PlayerData.getInventoryItems
+#### Return player inventory items list
+### Arguments
+
+none
+
+### Return
+
+```ts
+{[key: string]: number}
+```
+
+## Example
+
+```lua
+CORE.PlayerData.getInventoryItems() 
+```
