@@ -1,6 +1,8 @@
 # Exports
 
-## GetPlayerFactionData
+## Players
+
+### GetPlayerFactionData
 
 ```lua
 local player = exports.ProjectStarboy:GetPlayerFactionData(playerSrc)
@@ -15,52 +17,40 @@ local player = exports.ProjectStarboy:GetPlayerFactionData(playerSrc)
 ]]
 ```
 
-## HasFactionPrivilege
+### HasFactionPrivilege
 
 ```lua
 local canInvite = exports.ProjectStarboy:HasFactionPrivilege(playerSrc, "INVITE")
 -- boolean
 ```
 
-## getCash
+### getCash
 
 ```lua
 local money = exports.ProjectStarboy:getCash(playerSrc)
 -- number
 ```
 
-## getBank
+### getBank
 
 ```lua
 local bank = exports.ProjectStarboy:getBank(playerSrc)
 -- number
 ```
 
-## addCash
+### addCash
 
 ```lua
 local money = exports.ProjectStarboy:addCash(playerSrc, amount--[[ number ]])
 -- void
 ```
 
-## removeCash
+### removeCash
 
 ```lua
 local money = exports.ProjectStarboy:removeCash(playerSrc, amount--[[ number ]])
 -- void
 ```
-
-## SettingVariable_GetVar
-
-```lua
-local timeInterval = exports.ProjectStarboy:SettingVariable_GetVar('time_interval', 100)
---[[
-  return 100 if not have time_interval variable
-
-]]
-```
-
-## Players
 
 ### getSkillExp
 
@@ -164,4 +154,67 @@ exports.ProjectStarboy:setExp(playerSrc, 100)
 
 ```lua
 exports.ProjectStarboy:setWanted(playerSrc, 5)
+```
+
+## Vehicle
+
+### deleteVehicle
+
+```lua
+exports.ProjectStarboy:deleteVehicle(vehicleId)
+```
+
+### createTempVehicle
+
+```lua
+local response = exports.ProjectStarboy:createTempVehicle({
+  player_id = player.id,
+  model_hash = GetHashKey(model),
+  name = model,
+})
+--[[
+return [
+  true,
+  null,
+  {
+    "parked": false,
+    "odo": 0,
+    "created_at": "2024-07-19T06:35:27.375Z",
+    "model_hash": 55628203,
+    "uid": "13175535",
+    "name": "faggio2",
+    "plate": "XETHUE",
+    "className": "VehicleV2",
+    "vehicle_class": "unknown",
+    "classType": "class",
+    "temp": true,
+    "impound": false,
+    "properties": [],
+    "player_id": 208,
+    "id": 13175535
+  }
+]
+]]
+```
+
+### spawnVehicle
+
+```lua
+local spawnResponse = exports.ProjectStarboy:spawnVehicle(
+  vehicleId,
+  coords --[[ vector3 ]],
+  heading --[[ number ]]
+)
+--[[
+return [133652,65534] (entity, netEntity)
+]]
+```
+
+## Utils
+
+### SettingVariable_GetVar
+
+```lua
+exports['ProjectStarboy']:SettingVariable_GetVar(name, defaultValue)
+--[[ return default value if not exist in database ]]
 ```
