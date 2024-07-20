@@ -1,10 +1,17 @@
 # LR NPC
+
 ![npc](https://cdn.lorraxs.dev/doc-assets/lr_npc.png "lr_npc")
+
 ## Create NPC
+
 ---
+
 ### Option
+
 Use for create NPC
+
 ### Option parameters
+
 - name: `string`
   - Use for delete npc
 - coords: `vector3`
@@ -13,8 +20,11 @@ Use for create NPC
   - Ped heading
 - options: `ox_target options`
   - use [ox_target option](https://overextended.dev/ox_target/Options)
-- blip?: ```{sprite: number; color: number; name: string; scale: number; shortRange: boolean}```
+- blip?: `{sprite: number; color: number; name: string; scale: number; shortRange: boolean}`
+- navigation?: `{color?: {r,g,b}, icon?: string}`
+
 ### Example
+
 ```lua
 exports.lr_npc:CreatePed({
       name = "lr_rentvehicle",
@@ -38,13 +48,20 @@ exports.lr_npc:CreatePed({
         name = "Thuê phương tiện",
         scale = 0.7,
         shortRange = true
+      },
+      navigation = {
+        color = {255,255,255},
+        icon = "clothes"
       }
     })
 ```
 
 ## Delete NPC
+
 ---
+
 ### Example
+
 ```lua
 exports.lr_npc:DestroyPed(npcName)
 ```
